@@ -3,8 +3,14 @@ const user = require('./routes/user')
 const mushoku = require('./routes/mushoku')
 const configV = require('./config/envVars')
 const {connection:db} = require('./config/dbConnection')
+const cookies = require('cookie-parser')
 
 const app = express()
+
+//middelWares
+app.use(express.json())
+app.use(cookies())
+
 
 //databaseconection
 db()
